@@ -54,7 +54,7 @@ export default function Generator() {
         <div className='grid grid-cols-3 gap-4 mb-10'>
         {Object.keys(SCHEMES).map((scheme, schemeIndex) =>{
             return (
-                <button onClick={()=> setGoals(scheme)} className='bg-slate-950 border-2 border-blue-400 py-4 rounded-lg duration-200 hover:border-blue-600'key={schemeIndex}>
+                <button onClick={()=> setGoals(scheme)} className={'bg-slate-950 border-2  duration-200 hover:border-blue-600 py-4 rounded-lg' + (scheme === goals ? ' border-blue-800' : ' border-blue-400')} key={schemeIndex}>
                     <p className='capitalize'>{scheme.replaceAll('_'," ")}</p>
                 </button>
             )
