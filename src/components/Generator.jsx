@@ -32,7 +32,7 @@ export default function Generator() {
         <div className='grid grid-cols-2 sm:grid-cols-4 gap-5 mb-10'>
         {Object.keys(WORKOUTS).map((type, typeIndex) =>{
             return (
-                <button onClick={()=> setPoison(type)} className='bg-slate-950 border-2 border-blue-400 py-4 rounded-lg duration-200 hover:border-blue-600'key={typeIndex}>
+                <button onClick={()=> setPoison(type)} className={'bg-slate-950 border-2  duration-200 hover:border-blue-600 py-4 rounded-lg' + (type === poison ? ' border-blue-800' : ' border-blue-400')} key={typeIndex}>
                     <p className='capitalize'>{type.replaceAll('_'," ")}</p>
                 </button>
             )
@@ -41,7 +41,7 @@ export default function Generator() {
 
         <Header index={'02'} title={'Lock On Targets'} description={'Select the muscles judged for annihilation'}/>
         <div className='bg-slate-950 py-3 border-2 border-solid border-blue-400 rounded-lg flex flex-col mb-10'>
-            <button  onClick={toggleModal} className={'p-2 relative flex items-center justify-center'}>
+            <button  onClick={toggleModal} className='p-2 relative flex items-center justify-center '>
                 <p>Select muscle group</p>
                 <i className="fa-solid absolute right-3 top-1/2 -translate-y-1/2 fa-caret-down"></i>
             </button>
